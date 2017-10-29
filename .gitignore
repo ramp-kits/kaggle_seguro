@@ -20,7 +20,6 @@ dist/
 *starting_kit.html
 *.pkl
 
-y_pred_test.csv
-data/*.csv
-data/*.7z
+kaggle_data/*.csv
+kaggle_data/*.7z
 submissions/*/training_output
