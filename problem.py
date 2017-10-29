@@ -31,7 +31,7 @@ def get_train_data(path='.'):
     if test:
         data = pd.read_csv(os.path.join(path, 'data', 'train.csv'), nrows=100)
     else:
-        data = pd.read_csv(os.path.join(path, 'data', 'train.csv'))
+        data = pd.read_csv(os.path.join(path, 'kaggle_data', 'train.csv'))
     y_array = data[_target_column_name].values
     X_df = data.drop(_target_column_name, axis=1)
     return X_df, y_array
@@ -42,17 +42,20 @@ def get_test_data(path='.'):
     if test:
         X_df = pd.read_csv(os.path.join(path, 'data', 'test.csv'), nrows=100)
     else:
-        X_df = pd.read_csv(os.path.join(path, 'data', 'test.csv'))
+        X_df = pd.read_csv(os.path.join(path, 'kaggle_data', 'test.csv'))
     y_array = np.zeros(len(X_df))  # dummy labels for syntax
     y_array[0] = 1  # to make AUC work
     return X_df, y_array
 
 
 def save_y_pred(y_pred, data_path='.', output_path='.', suffix='test'):
-    sample_df = pd.read_csv(os.path.join(
-        data_path, 'data', 'sample_submission.csv'))
-    if os.getenv('RAMP_TEST_MODE', 0):
-        sample_df = sample_df.iloc[:100]
+    test = os.getenv('RAMP_TEST_MODE', 0)
+    if test:
+        sample_df = pd.read_csv(os.path.join(
+            data_path, 'data', 'sample_submission.csv'))
+    else:
+        sample_df = pd.read_csv(os.path.join(
+            data_path, 'kaggle_data', 'sample_submission.csv'))
     df = pd.DataFrame()
     df['id'] = sample_df['id']
     df['target'] = y_pred[:, 1]
