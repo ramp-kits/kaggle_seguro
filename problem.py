@@ -48,10 +48,13 @@ def get_test_data(path='.'):
     return X_df, y_array
 
 
-def save_y_pred(y_pred_test, path='.'):
+def save_y_pred(y_pred, data_path='.', output_path='.', suffix='test'):
     sample_df = pd.read_csv(os.path.join(
-        path, 'data', 'sample_submission.csv'))
+        data_path, 'data', 'sample_submission.csv'))
+    if os.getenv('RAMP_TEST_MODE', 0):
+        sample_df = sample_df.iloc[:100]
     df = pd.DataFrame()
     df['id'] = sample_df['id']
-    df['target'] = y_pred_test[:, 1]
-    df.to_csv('y_pred_test.csv', index=False)
+    df['target'] = y_pred[:, 1]
+    output_f_name = os.path.join(output_path, 'y_pred_{}.csv'.format(suffix))
+    df.to_csv(output_f_name, index=False)
