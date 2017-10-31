@@ -36,8 +36,8 @@ kaggle_seguro/
 │   ├── starting_kit
 │   │   ├── classifier.py
 │   │   └── feature_extractor.py
-├── kaggle_seguro_starting_kit.ipynb
 ├── README.md
+├── kaggle_seguro_starting_kit.ipynb
 ├── mock_data.py
 ├── problem.py
 └── requirements.txt
