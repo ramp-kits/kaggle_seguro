@@ -22,14 +22,14 @@ score_types = [
 
 
 def get_cv(X, y):
-    cv = StratifiedShuffleSplit(n_splits=8, test_size=0.2, random_state=57)
+    cv = StratifiedShuffleSplit(n_splits=8, test_size=0.5, random_state=57)
     return cv.split(X, y)
 
 
 def get_train_data(path='.'):
     test = os.getenv('RAMP_TEST_MODE', 0)
     if test:
-        data = pd.read_csv(os.path.join(path, 'data', 'train.csv'), nrows=100)
+        data = pd.read_csv(os.path.join(path, 'data', 'train.csv'))
     else:
         data = pd.read_csv(os.path.join(path, 'kaggle_data', 'train.csv'))
     y_array = data[_target_column_name].values
@@ -40,7 +40,7 @@ def get_train_data(path='.'):
 def get_test_data(path='.'):
     test = os.getenv('RAMP_TEST_MODE', 0)
     if test:
-        X_df = pd.read_csv(os.path.join(path, 'data', 'test.csv'), nrows=100)
+        X_df = pd.read_csv(os.path.join(path, 'data', 'test.csv'))
     else:
         X_df = pd.read_csv(os.path.join(path, 'kaggle_data', 'test.csv'))
     y_array = np.zeros(len(X_df))  # dummy labels for syntax
@@ -49,6 +49,8 @@ def get_test_data(path='.'):
 
 
 def save_y_pred(y_pred, data_path='.', output_path='.', suffix='test'):
+    if 'test' not in suffix:
+        return  # we don't care about saving the training predictions
     test = os.getenv('RAMP_TEST_MODE', 0)
     if test:
         sample_df = pd.read_csv(os.path.join(
