@@ -52,4 +52,4 @@ ramp_test_submission
 ```
 If it runs and print training and test errors on each fold, then your setup is complete.
 
-Please refer to the corresponding section in the [notebook](kaggle_seguro_starting_kit.ipynb) for more information about submitting to RAMP and to Kaggle.
+Please refer to the corresponding sections in the [notebook](kaggle_seguro_starting_kit.ipynb) for more information about submitting to RAMP and to Kaggle.
