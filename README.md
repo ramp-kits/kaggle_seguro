@@ -22,6 +22,8 @@ RAMP sign-ups will naturally close at the team merger deadline on November 22. W
 
 In case the RAMP team wins one of the money prizes, **50% will go to the RAMP organizers** (we will recycle it as money prize for future RAMPs), 25% will be shared proportionally to the **contributions to the combined (ensemble) score (jumps, starting at the single submission called "baseline" that the RAMP organizers will submit in the beginning of the RAMP)**, and 25% will be shared according to the **influence** of the submitters, computed using the non-self credits participants give to submissions of other participants after each submission.
 
+There will not be a strict limit on resource use but make an effort to keep your total training time below 50 hours. We retain the right to disqualify your submissions if they take too much time to train.
+
 ## Setting up the starting kit
 
 First install `ramp-workflow` (`rampwf`). 
