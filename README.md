@@ -24,12 +24,9 @@ In case the RAMP team wins one of the money prizes, **50% will go to the RAMP or
 
 ## Setting up the starting kit
 
-First install `ramp-workflow` (`rampwf`). For now you need to pull from a temporary branch to install the latest tools you will need for, e.g., outputting predictions ready made for Kaggle. 
+First install `ramp-workflow` (`rampwf`). 
 ```
-git clone https://github.com/paris-saclay-cds/ramp-workflow.git
-cd ramp-workflow
-git checkout cv_bagging
-python setup.py install
+pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
 ```
 Second, install this kit
 ```
