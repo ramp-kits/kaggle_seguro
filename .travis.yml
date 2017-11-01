@@ -16,6 +16,7 @@ install:
     - pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
 script:
     - flake8 *.py submissions/*/*.py
+    - ramp_convert_notebook
     - ramp_test_notebook
     - ramp_test_submission --quick-test --save-y-preds --pickle --retrain
 notifications:
