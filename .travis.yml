@@ -11,9 +11,9 @@ before_install:
 install:
     - conda create -n testenv --yes pip python=$PYTHON_VERSION
     - source activate testenv
-    - conda install --yes --quiet seaborn
     - pip install -q flake8
     - pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
+    - pip install -r requirements.txt
 script:
     - flake8 *.py submissions/*/*.py
     - ramp_convert_notebook
