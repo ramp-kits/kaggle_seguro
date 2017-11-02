@@ -10,7 +10,7 @@ This is the RAMP starting kit for the [Kaggle data challenge](https://www.kaggle
 
 ```
 pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
-git https://github.com/ramp-kits/kaggle_seguro.git
+git clone https://github.com/ramp-kits/kaggle_seguro.git
 cd kaggle_seguro
 pip install -r requirements.txt
 ramp_test_submission --quick-test
@@ -43,7 +43,7 @@ pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
 ```
 Second, install this kit
 ```
-git https://github.com/ramp-kits/kaggle_seguro.git
+git clone https://github.com/ramp-kits/kaggle_seguro.git
 cd kaggle_seguro
 pip install -r requirements.txt
 ```
