@@ -68,7 +68,17 @@ Execute
 ```
 ramp_test_submission --quick-test
 ```
-to test `submissions/starting_kit/feature_extractor.py` and `submissions/starting_kit/classifier.py` against the mock data in `data/`. If you want to test the starting kit on the official Kaggle data, sign up to the [Kaggle challenge](https://www.kaggle.com/c/porto-seguro-safe-driver-prediction), download `train.7z` and `test.7z`, unzip them and place them in `kaggle_data/`. If you want to use the starting kit to generate output in the right Kaggle submission format, you will also need to download `sample_submission.7z`, unzip it, and place it in `kaggle_data/`. Once the data is in place, execute
+to test `submissions/starting_kit/feature_extractor.py` and `submissions/starting_kit/classifier.py` against the mock data in `data/`. If you want to test the starting kit on the official Kaggle data, sign up to the [Kaggle challenge](https://www.kaggle.com/c/porto-seguro-safe-driver-prediction), download `train.7z` and `test.7z`, unzip them and place them in `kaggle_data/`. If you want to use the starting kit to generate output in the right Kaggle submission format, you will also need to download `sample_submission.7z`, unzip it, and place it in `kaggle_data/`:
+```
+kaggle_seguro/
+...
+├── kaggle_data
+│   ├── sample_submission.csv
+│   ├── test.csv
+│   └── train.csv
+└── 
+```
+Once the data is in place, execute
 ```
 ramp_test_submission
 ```
