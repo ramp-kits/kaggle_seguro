@@ -48,7 +48,7 @@ def get_test_data(path='.'):
     return X_df, y_array
 
 
-def save_y_pred(y_pred, data_path='.', output_path='.', suffix='test'):
+def save_submission(y_pred, data_path='.', output_path='.', suffix='test'):
     if 'test' not in suffix:
         return  # we don't care about saving the training predictions
     test = os.getenv('RAMP_TEST_MODE', 0)
@@ -61,5 +61,6 @@ def save_y_pred(y_pred, data_path='.', output_path='.', suffix='test'):
     df = pd.DataFrame()
     df['id'] = sample_df['id']
     df['target'] = y_pred[:, 1]
-    output_f_name = os.path.join(output_path, 'y_pred_{}.csv'.format(suffix))
+    output_f_name = os.path.join(
+        output_path, 'submission_{}.csv'.format(suffix))
     df.to_csv(output_f_name, index=False)
